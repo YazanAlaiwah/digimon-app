@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script id="html" type="x-tmpl-mustache">
+        <div>
+            <img src="{{img}}" alt="">
+                <p>{{name}}</p>
+                <p>{{level}}</p>
+                <form action="/digimon" method="post">
+                 <input style="display: none;" type="text" name="name" value="{{name}}">
+                 <input style="display: none;" type="text" name="img" value="{{img}}">
+                 <input style="display: none;" type="text" name="level" value="{{level}}">
+                 <button>ADD To Favirote</button>
+                </form>
+            </div>
+
+    </script>
+</head>
+
+<body>
+    <header></header>
+    <main>
+        <form onsubmit="searchByName(event)">
+            <input type="text" placeholder="name..." name="name" id="name">
+            <button>search by name</button>
+        </form>
+        <form onsubmit="searchByLevel(event)">
+            <input type="text" placeholder="level..." name="level" id="level">
+            <button>search by level</button>
+        </form>
+        <div id="digimons">
+            <%digimons.forEach(item=>{%>
+            <div>
+                <img src="<%=item.img%>" alt="">
+                <p><%=item.name%></p>
+                <p><%=item.level%></p>
+                <form action="/digimon" method="post">
+                    <input style="display: none;" type="text" name="name" value="<%=item.name%>">
+                    <input style="display: none;" type="text" name="img" value="<%=item.img%>">
+                    <input style="display: none;" type="text" name="level" value="<%=item.level%>">
+                    <button>ADD To Favirote</button>
+                </form>
+            </div>
+            <%})%>
+        </div>
+    </main>
+    <footer></footer>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/mustache.js/3.1.0/mustache.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.0/jquery.js"></script>
+    <script src="js/app.js"></script>
+</body>
+
+</html>

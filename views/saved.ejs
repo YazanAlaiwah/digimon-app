@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <header></header>
+    <main>
+        <div>
+            <%savedDigimons.forEach(item=>{%>
+            <img src="<%=item.img%>" alt="">
+            <p><%=item.name%></p>
+            <p><%=item.level%></p>
+            <form action="/digimon/<%=item.id%>" method="GET">
+                <button>see derails</button>
+            </form>
+            <%})%>
+        </div>
+
+    </main>
+    <footer></footer>
+</body>
+
+</html>

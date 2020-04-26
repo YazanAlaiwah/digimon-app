@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <img src="<%=data[0].img%>" alt="">
+    <p><%=data[0].name%></p>
+    <p><%=data[0].level%></p>
+    <form action="/digimon/<%=data[0].id%>?_method=put" method="POST">
+    <input type="text" name="name" value="<%=data[0].name%>">
+    <input type="text" name="level" value="<%=data[0].level%>">
+    <input type="text" name="img" value="<%=data[0].img%>">
+    <button>Updata</button>
+    </form>
+    <form action="/digimon/<%=data[0].id%>?_method=delete" method="POST">
+    <button>DELETE</button>
+    </form>
+</body>
+</html>
